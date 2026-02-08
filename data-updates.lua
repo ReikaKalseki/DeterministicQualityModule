@@ -1,22 +1,24 @@
+require "__DragonIndustries__.di-utils"
+
 local function changeQualityModule(name, property, amount)
 	if not data.raw.module[name] then
-		error("No such module '" .. name .. "'!")
+		fmterror("No such module '%s'!", name)
 	end
     if data.raw.module[name].effect then
         data.raw.module[name].effect[property] = amount
 	else
-		log("Module '" .. name .. "' has no such effect property '" .. property .. "', so it will be added anew:\n" .. serpent.block(data.raw.module[name]))
+		fmtlog("Module '%s' has no such effect property '%s', so it will be added anew:\n%s", name, property, data.raw.module[name])
     end
 end
 
 local function reduceSpeedQuality(name, amount)
 	if not data.raw.module[name] then
-		error("No such module '" .. name .. "'!")
+		fmterror("No such module '%s'!", name)
 	end
     if data.raw.module[name].effect and data.raw.module[name].effect.quality then
         data.raw.module[name].effect.quality = amount
 	else
-		log("Module '" .. name .. "' has no quality effect to modify:\n" .. serpent.block(data.raw.module[name]))
+		fmtlog("Module '%s' has no quality effect to modify:\n%s", name, data.raw.module[name])
     end
 end
 

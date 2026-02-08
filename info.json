@@ -5,5 +5,5 @@
   "title": "Deterministic Quality Module",
   "author": "Reika",
   "description": "Adds an endgame T4 quality module that can be used to guarantee a quality step, but comes at extreme runtime cost, and requires being high quality itself to get the most benefit.",
-  "dependencies": ["base"]
+  "dependencies": ["base >= 2.0.0", "space-age >= 2.0.0", "DragonIndustries"]
 }
